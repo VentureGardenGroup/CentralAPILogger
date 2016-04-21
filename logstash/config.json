@@ -1,0 +1,65 @@
+input {
+  beats {
+    port => 5044
+  }
+}
+
+
+filter {
+    csv {
+        columns =>
+          [
+          "LogTime","Level","ApplicationName","ServerHost","ServerIP","Message",
+          "CorrelationId","RequestIP",
+          "RequestURI","RequestBody","RequestMethod","RequestTime","ResponseTime","Response","StatusCode",
+          "StatusText","TimeDiff","Headers"
+          ]        
+
+          separator => ","
+        } 
+
+
+ if [LogTime]=="LogTime"
+          { 
+            drop{}
+          }
+                   
+
+  grok { match => [ "RequestBody", "%{WORD:Request_Body}?" ] }
+  grok { match => [ "Response", "%{WORD:Response_Body}?" ] }
+   grok { match => [ "RequestURI", "%{URIPATH:Url_Path}%{URIPARAM:Url_Querystring}?" ] }
+
+
+         mutate {
+    remove_field => [ "message","Message","RequestBody","Response" ]
+  }
+
+   geoip {
+          add_tag => [ "geoip" ]
+          source => "RequestIP"
+          target => "geoip"
+          add_field => [ "[geoip][coordinates]", "%{[geoip][longitude]}" ]
+          add_field => [ "[geoip][coordinates]", "%{[geoip][latitude]}"  ]
+         }
+            
+
+
+ date{
+        match => ["LogTime", "yyyy-MM-dd HH:mm:ss"]
+        locale => "en"
+         target => "LogTime"
+      }
+     
+
+}
+
+output {
+  elasticsearch {
+    hosts => "localhost:9200"
+    sniffing => true
+    manage_template => false
+    index => "%{[@metadata][beat]}-%{+YYYY.MM}"
+    document_type => "%{[@metadata][type]}"
+   
+  }
+}

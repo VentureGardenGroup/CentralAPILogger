@@ -1,0 +1,104 @@
+{
+  "mappings": {
+    "_default_": {
+      "_all": {
+        "enabled": true,
+        "norms": {
+          "enabled": false
+        }
+      },
+      "dynamic_templates": [
+        {
+          "template1": {
+            "mapping": {
+              "doc_values": true,
+              "ignore_above": 1024,
+              "index": "not_analyzed",
+              "type": "{dynamic_type}"
+            },
+            "match": "*"
+          }
+        }
+      ],
+      "properties": {
+        "geoip" : {
+            "properties" : {
+
+              "area_code" : {
+                "type" : "long"
+              },
+              "city_name" : {
+                "type" : "string"
+              },
+              "continent_code" : {
+                "type" : "string"
+              },
+              "country_code2" : {
+                "type" : "string"
+              },
+              "country_code3" : {
+                "type" : "string"
+              },
+              "country_name" : {
+                "type" : "string"
+              },
+              "dma_code" : {
+                "type" : "long"
+              },
+              "ip" : {
+                "type" : "string"
+              },
+              "latitude" : {
+                "type" : "double"
+              },
+              "location" : {
+                "type" : "geo_point"
+              },
+              "longitude" : {
+                "type" : "double"
+              },
+              "postal_code" : {
+                "type" : "string"
+              },
+              "real_region_name" : {
+                "type" : "string"
+              },
+              "region_name" : {
+                "type" : "string"
+              },
+              "timezone" : {
+                "type" : "string"
+              }
+            }
+          },
+        "@timestamp": {
+          "type": "date"
+        },
+        "LogTime": {
+          "type": "date"
+        },
+         "TimeDiff": {
+          "type": "double"
+        },
+           "ServerIP": {
+          "type": "ip"
+        },
+         "RequestIP": {
+          "type": "ip"
+        },
+        "message": {
+          "type": "string",
+          "index": "analyzed"
+        },
+        "offset": {
+          "type": "long",
+          "doc_values": "true"
+        }
+      }
+    }
+  },
+  "settings": {
+    "index.refresh_interval": "5s"
+  },
+  "template": "logstash-*"
+}
