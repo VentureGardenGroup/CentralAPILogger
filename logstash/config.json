@@ -11,7 +11,7 @@ filter {
           [
           "LogTime","Level","ApplicationName","ServerHost","ServerIP","Message",
           "CorrelationId","RequestIP",
-          "RequestURI","RequestBody","RequestMethod","RequestTime","ResponseTime","Response","StatusCode",
+          "RequestURI","RequestBody","FullRequestBody","RequestMethod","RequestTime","ResponseTime","Response","FullResponse","StatusCode",
           "StatusText","TimeDiff","Headers"
           ]        
 
@@ -24,14 +24,17 @@ filter {
             drop{}
           }
                    
+if [ServerHost]==""
+          { 
+            drop{}
+          }
+                
 
-  grok { match => [ "RequestBody", "%{WORD:Request_Body}?" ] }
-  grok { match => [ "Response", "%{WORD:Response_Body}?" ] }
    grok { match => [ "RequestURI", "%{URIPATH:Url_Path}%{URIPARAM:Url_Querystring}?" ] }
 
 
          mutate {
-    remove_field => [ "message","Message","RequestBody","Response" ]
+    remove_field => [ "message","Message","FullRequestBody","FullResponse" ]
   }
 
    geoip {

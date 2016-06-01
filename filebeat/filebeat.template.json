@@ -100,5 +100,5 @@
   "settings": {
     "index.refresh_interval": "5s"
   },
-  "template": "logstash-*"
+  "template": "central_logs-*"
 }

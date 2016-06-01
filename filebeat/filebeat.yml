@@ -238,7 +238,7 @@ output:
     # Optional index name. The default index name depends on the each beat.
     # For Packetbeat, the default is set to packetbeat, for Topbeat
     # top topbeat and for Filebeat to filebeat.
-    index: logstash23
+    index: central_logs
 
     # Optional TLS. By default is off.
     #tls:
