@@ -9,5 +9,6 @@
 	  </metadata>
 	  <files>
 	  <file src="*" exclude="packages.config;*.cs;*.csproj;*.user;*.nuspec" />
+	   <file src="bin\Release\**" target="Bin" />
 	  	  </files>
 	</package>
