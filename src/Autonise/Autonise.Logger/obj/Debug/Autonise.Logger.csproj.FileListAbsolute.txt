@@ -27,9 +27,12 @@ C:\Users\Adeniyi\Dropbox (Personal)\codebase\CentralAPILogger\src\Autonise\Auton
 C:\Users\Adeniyi\Dropbox (Personal)\codebase\CentralAPILogger\src\Autonise\Autonise.Logger\bin\Debug\Autonise.Logger.dll
 C:\Users\Adeniyi\Dropbox (Personal)\codebase\CentralAPILogger\src\Autonise\Autonise.Logger\bin\Debug\Autonise.Logger.pdb
 C:\Users\Adeniyi\Dropbox (Personal)\codebase\CentralAPILogger\src\Autonise\Autonise.Logger\bin\Debug\Newtonsoft.Json.dll
-C:\Users\Adeniyi\Dropbox (Personal)\codebase\CentralAPILogger\src\Autonise\Autonise.Logger\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
 C:\Users\Adeniyi\Dropbox (Personal)\codebase\CentralAPILogger\src\Autonise\Autonise.Logger\bin\Debug\NLog.xml
 C:\Users\Adeniyi\Dropbox (Personal)\codebase\CentralAPILogger\src\Autonise\Autonise.Logger\bin\Debug\NLog.Extended.xml
 C:\Users\Adeniyi\Dropbox (Personal)\codebase\CentralAPILogger\src\Autonise\Autonise.Logger\obj\Debug\Autonise.Logger.csprojResolveAssemblyReference.cache
 C:\Users\Adeniyi\Dropbox (Personal)\codebase\CentralAPILogger\src\Autonise\Autonise.Logger\obj\Debug\Autonise.Logger.dll
 C:\Users\Adeniyi\Dropbox (Personal)\codebase\CentralAPILogger\src\Autonise\Autonise.Logger\obj\Debug\Autonise.Logger.pdb
+C:\Users\Adeniyi\Dropbox (Personal)\codebase\CentralAPILogger\src\Autonise\Autonise.Logger\bin\Debug\NLog.dll
+C:\Users\Adeniyi\Dropbox (Personal)\codebase\CentralAPILogger\src\Autonise\Autonise.Logger\bin\Debug\NLog.Extended.dll
+C:\Users\Adeniyi\Dropbox (Personal)\codebase\CentralAPILogger\src\Autonise\Autonise.Logger\bin\Debug\StackifyLib.dll
+C:\Users\Adeniyi\Dropbox (Personal)\codebase\CentralAPILogger\src\Autonise\Autonise.Logger\bin\Debug\StackifyLib.nLog.dll
