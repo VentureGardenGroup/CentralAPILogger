@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+	<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+	  <metadata>
+	    <id>Autonise.Logger</id>
+	    <version>1.0.0</version>
+	    <authors>Splasherstech</authors>
+	    <description>Central Logger deployment package, built on 14/06/2016</description>
+	    <releaseNotes />
+	  </metadata>
+	  <files>
+	  <file src="*" exclude="packages.config;*.cs;*.csproj;*.user;*.nuspec" />
+	  	  </files>
+	</package>

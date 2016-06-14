@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NLog.Extended</name>
+    </assembly>
+    <members>
+        <member name="T:NLog.LayoutRenderers.AppSettingLayoutRenderer">
+            <summary>
+            Application setting.
+            </summary>
+            <remarks>
+            Use this layout renderer to insert the value of an application setting
+            stored in the application's App.config or Web.config file.
+            </remarks>
+            <code lang="NLog Layout Renderer">
+            ${appsetting:name=mysetting:default=mydefault} - produces "mydefault" if no appsetting
+            </code>
+        </member>
+        <member name="M:NLog.LayoutRenderers.AppSettingLayoutRenderer.Append(System.Text.StringBuilder,NLog.LogEventInfo)">
+            <summary>
+            Renders the specified application setting or default value and appends it to the specified <see cref="T:System.Text.StringBuilder"/>.
+            </summary>
+            <param name="builder">The <see cref="T:System.Text.StringBuilder"/> to append the rendered data to.</param>
+            <param name="logEvent">Logging event.</param>
+        </member>
+        <member name="P:NLog.LayoutRenderers.AppSettingLayoutRenderer.Name">
+            <summary>
+             The AppSetting name.
+            </summary>
+        </member>
+        <member name="P:NLog.LayoutRenderers.AppSettingLayoutRenderer.Default">
+            <summary>
+             The default value to render if the AppSetting value is null.
+            </summary>
+        </member>
+        <member name="T:NLog.Targets.MessageQueueTarget">
+            <summary>
+            Writes log message to the specified message queue handled by MSMQ.
+            </summary>
+            <seealso href="https://github.com/nlog/nlog/wiki/MessageQueue-target">Documentation on NLog Wiki</seealso>
+            <example>
+            <p>
+            To set up the target in the <a href="config.html">configuration file</a>, 
+            use the following syntax:
+            </p>
+            <code lang="XML" source="examples/targets/Configuration File/MSMQ/Simple/NLog.config" />
+            <p>
+            You can use a single target to write to multiple queues (similar to writing to multiple files with the File target).
+            </p>
+            <code lang="XML" source="examples/targets/Configuration File/MSMQ/Multiple/NLog.config" />
+            <p>
+            The above examples assume just one target and a single rule. 
+            More configuration options are described <a href="config.html">here</a>.
+            </p>
+            <p>
+            To set up the log target programmatically use code like this:
+            </p>
+            <code lang="C#" source="examples/targets/Configuration API/MSMQ/Simple/Example.cs" />
+            </example>
+        </member>
+        <member name="M:NLog.Targets.MessageQueueTarget.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:NLog.Targets.MessageQueueTarget"/> class.
+            </summary>
+            <remarks>
+            The default value of the layout is: <code>${longdate}|${level:uppercase=true}|${logger}|${message}</code>
+            </remarks>
+        </member>
+        <member name="M:NLog.Targets.MessageQueueTarget.Write(NLog.LogEventInfo)">
+            <summary>
+            Writes the specified logging event to a queue specified in the Queue 
+            parameter.
+            </summary>
+            <param name="logEvent">The logging event.</param>
+        </member>
+        <member name="M:NLog.Targets.MessageQueueTarget.PrepareMessage(NLog.LogEventInfo)">
+            <summary>
+            Prepares a message to be sent to the message queue.
+            </summary>
+            <param name="logEvent">The log event to be used when calculating label and text to be written.</param>
+            <returns>The message to be sent.</returns>
+            <remarks>
+            You may override this method in inheriting classes
+            to provide services like encryption or message 
+            authentication.
+            </remarks>
+        </member>
+        <member name="P:NLog.Targets.MessageQueueTarget.Queue">
+            <summary>
+            Gets or sets the name of the queue to write to.
+            </summary>
+            <remarks>
+            To write to a private queue on a local machine use <c>.\private$\QueueName</c>.
+            For other available queue names, consult MSMQ documentation.
+            </remarks>
+            <docgen category='Queue Options' order='10' />
+        </member>
+        <member name="P:NLog.Targets.MessageQueueTarget.Label">
+            <summary>
+            Gets or sets the label to associate with each message.
+            </summary>
+            <remarks>
+            By default no label is associated.
+            </remarks>
+            <docgen category='Queue Options' order='10' />
+        </member>
+        <member name="P:NLog.Targets.MessageQueueTarget.CreateQueueIfNotExists">
+            <summary>
+            Gets or sets a value indicating whether to create the queue if it doesn't exists.
+            </summary>
+            <docgen category='Queue Options' order='10' />
+        </member>
+        <member name="P:NLog.Targets.MessageQueueTarget.Recoverable">
+            <summary>
+            Gets or sets a value indicating whether to use recoverable messages (with guaranteed delivery).
+            </summary>
+            <docgen category='Queue Options' order='10' />
+        </member>
+        <member name="P:NLog.Targets.MessageQueueTarget.Encoding">
+            <summary>
+            Gets or sets the encoding to be used when writing text to the queue.
+            </summary>
+            <docgen category='Layout Options' order='10' />
+        </member>
+        <member name="P:NLog.Targets.MessageQueueTarget.UseXmlEncoding">
+            <summary>
+            Gets or sets a value indicating whether to use the XML format when serializing message.
+            This will also disable creating queues.
+            </summary>
+            <docgen category='Layout Options' order='10' />
+        </member>
+        <member name="P:NLog.Targets.MessageQueueTarget.CheckIfQueueExists">
+            <summary>
+            Gets or sets a value indicating whether to check if a queue exists before writing to it.
+            </summary>
+            <docgen category='Layout Options' order='11' />
+        </member>
+    </members>
+</doc>
