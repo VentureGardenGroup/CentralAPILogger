@@ -36,11 +36,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\sso\src\packages\Newtonsoft.Json.6.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\Autonise\src\packages\Newtonsoft.Json.6.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <HintPath>..\sso\src\packages\NLog.4.2.3\lib\net45\NLog.dll</HintPath>
+      <HintPath>..\Autonise\packages\NLog.4.2.3\lib\net45\NLog.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="NLog.Extended, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
@@ -48,11 +48,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="StackifyLib, Version=1.19.5890.19948, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\sso\src\packages\StackifyLib.1.19.0.0\lib\StackifyLib.dll</HintPath>
+      <HintPath>..\Autonise\packages\StackifyLib.1.19.0.0\lib\StackifyLib.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="StackifyLib.nLog">
-      <HintPath>..\sso\src\packages\StackifyLib.nLog.1.18.0\lib\StackifyLib.nLog.dll</HintPath>
+      <HintPath>..\Autonise\packages\StackifyLib.nLog.1.18.0\lib\StackifyLib.nLog.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
