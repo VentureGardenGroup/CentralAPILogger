@@ -36,3 +36,4 @@ C:\Users\Adeniyi\Dropbox (Personal)\codebase\CentralAPILogger\src\Autonise\Auton
 C:\Users\Adeniyi\Dropbox (Personal)\codebase\CentralAPILogger\src\Autonise\Autonise.Logger\bin\Debug\NLog.Extended.dll
 C:\Users\Adeniyi\Dropbox (Personal)\codebase\CentralAPILogger\src\Autonise\Autonise.Logger\bin\Debug\StackifyLib.dll
 C:\Users\Adeniyi\Dropbox (Personal)\codebase\CentralAPILogger\src\Autonise\Autonise.Logger\bin\Debug\StackifyLib.nLog.dll
+C:\Users\Adeniyi\Dropbox (Personal)\codebase\CentralAPILogger\src\Autonise\Autonise.Logger\bin\Debug\Newtonsoft.Json.xml
