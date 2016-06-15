@@ -6,16 +6,16 @@
 	    <authors>Splasherstech</authors>
 	    <description>Central Logger deployment package, built on 14/06/2016</description>
 	    <releaseNotes />
+	    	  <dependencies>
+  <dependency id="NLog" version="4.2.3" />
+  <dependency id="NLog.Extended" version="4.0.0.1" />
+  <dependency id="StackifyLib" version="1.19.0.0" />
+   <dependency id="StackifyLib.nLog" version="1.18.0" />
+ </dependencies>
 	  </metadata>
 	  <files>
 	  <file src="*" exclude="packages.config;*.cs;*.csproj;*.user;*.nuspec" />
 	   <file src="bin\Release\**" target="Bin" />
 	  </files>
 
-	  <dependencies>
-  <dependency id="NLog" version="4.2.3" />
-  <dependency id="NLog.Extended" version="4.0.0.1" />
-  <dependency id="StackifyLib" version="1.19.0.0" />
-   <dependency id="StackifyLib.nLog" version="1.18.0" />
- </dependencies>
 	</package>
