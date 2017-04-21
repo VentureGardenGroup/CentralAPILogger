@@ -63,7 +63,7 @@ namespace Autonise.Logger.WebApi
                 string reasonMessage = Encoding.UTF8.GetString(reasonMessageByte);
 
                 DateTime responseTime = DateTime.Now;
-                double timeDiff = responseTime.Subtract(currentDateTime).TotalSeconds;
+                double timeDiff = responseTime.Subtract(currentDateTime).TotalMilliseconds;
 
                 await
                     OutgoingMessageAsync(corrId, responseTime, timeDiff, responseMessage, httpStatusCode, reasonMessage,

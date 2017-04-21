@@ -46,7 +46,7 @@ namespace Autonise.Logger.WebApi
                 var serverIp = ServerIp(ServerHost);
                 LogEventInfo eventInfo = new LogEventInfo(LogLevel.Info, "CSVLogger", "Autonise API Logging was successful");
                 eventInfo.Properties["StatusCode"] = statusCode;
-                eventInfo.Properties["Response"] = (res.Length > 20) ? res.Substring(0, 20) : res;
+                eventInfo.Properties["Response"] = (res.Length > 200) ? res.Substring(0, 200) : res;
                 eventInfo.Properties["FullResponse"] = res;
                 eventInfo.Properties["StatusText"] = statusText.Replace("\n", "").Replace("\r", "");
                 eventInfo.Properties["CorrelationId"] = correlationId;
@@ -57,7 +57,7 @@ namespace Autonise.Logger.WebApi
 
                 eventInfo.Properties["IpAddress"] = clientIp == "::1" ? serverIp : clientIp;
                 eventInfo.Properties["RequestURI"] = requestUri.Replace("\n", "").Replace("\r", "");
-                eventInfo.Properties["Request"] = req.Length > 20 ? req.Substring(0, 20) : req;
+                eventInfo.Properties["Request"] = req.Length > 200 ? req.Substring(0, 200) : req;
                 eventInfo.Properties["RequestBody"] = req;
                 eventInfo.Properties["RequestMethod"] = requestMethod.Replace("\n", "").Replace("\r", "");
                 eventInfo.Properties["Headers"] = header.Replace("\n", "").Replace("\r", "");
